@@ -91,6 +91,8 @@ ENTRY
     type
     volume
     year
+    url
+    doi
   }
   {}
   { label extra.label sort.label short.list }
@@ -593,6 +595,14 @@ FUNCTION {format.title}
 { title empty$
     { "" }
     { title
+    }
+  if$
+}
+
+FUNCTION {format.doi}
+{ doi empty$
+    { "" }
+    { doi
     }
   if$
 }
@@ -1312,8 +1322,9 @@ FUNCTION {misc}
   date.block
   format.title output
   howpublished output
-  %format.note output
+  format.note output
   format.url output
+  format.doi output
   fin.entry
 }
 
